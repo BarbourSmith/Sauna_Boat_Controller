@@ -781,6 +781,10 @@
         {
           "name": "Shape 1",
           "ioValue": null
+        },
+        {
+          "name": "Shape 2",
+          "ioValue": null
         }
       ]
     },
@@ -1590,8 +1594,8 @@
             },
             {
               "atomType": "GitHubMolecule",
-              "x": 0.5185185185185185,
-              "y": 0.34261838440111425,
+              "x": 0.5238095238095238,
+              "y": 0.43732590529247906,
               "uniqueID": "id-165600",
               "name": "Above",
               "ioValues": [
@@ -1736,8 +1740,8 @@
             },
             {
               "atomType": "Fusion",
-              "x": 0.5648148148148149,
-              "y": 0.1671309192200557,
+              "x": 0.8406084656084656,
+              "y": 0.233983286908078,
               "uniqueID": "id-165622",
               "ioValues": [
                 {
@@ -1819,14 +1823,41 @@
                     "color": "#aad7f2",
                     "bom": []
                   }
+                },
+                {
+                  "name": "Shape 3",
+                  "ioValue": {
+                    "geometry": "f462194c-{\"geometry\":\"extrude-circle-13-{\\\"origin\\\":[0,0,0],\\\"xDir\\\":[1,0,0],\\\"normal\\\":[0,0,1]}-20\",\"dimension\":\"3D\",\"tags\":[],\"plane\":{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]},\"color\":\"#aad7f2\",\"bom\":[]}-10-{\"geometry\":\"move-extrude-rectangle-100-100-{\\\"origin\\\":[0,0,0],\\\"xDir\\\":[1,0,0],\\\"normal\\\":[0,0,1]}-10-0-0-13\",\"dimension\":\"3D\",\"plane\":{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]},\"color\":\"#aad7f2\",\"tags\":[],\"bom\":[]}-1",
+                    "dimension": "3D",
+                    "tags": [],
+                    "plane": {
+                      "origin": [
+                        0,
+                        0,
+                        0
+                      ],
+                      "xDir": [
+                        1,
+                        0,
+                        0
+                      ],
+                      "normal": [
+                        0,
+                        0,
+                        1
+                      ]
+                    },
+                    "color": "#aad7f2",
+                    "bom": []
+                  }
                 }
               ],
               "unionType": "Fusion"
             },
             {
               "atomType": "Circle",
-              "x": 0.42658730158730157,
-              "y": 0.9331476323119776,
+              "x": 0.22552910052910055,
+              "y": 0.9108635097493036,
               "uniqueID": "id-165627",
               "ioValues": [
                 {
@@ -1838,8 +1869,8 @@
             },
             {
               "atomType": "Extrude",
-              "x": 0.5265873015873016,
-              "y": 0.9331476323119776,
+              "x": 0.34523809523809523,
+              "y": 0.8969359331476323,
               "uniqueID": "id-165630",
               "ioValues": [
                 {
@@ -1855,8 +1886,8 @@
             },
             {
               "atomType": "GitHubMolecule",
-              "x": 0.6666666666666666,
-              "y": 0.6657381615598886,
+              "x": 0.6898148148148149,
+              "y": 0.5682451253481894,
               "uniqueID": "id-165658",
               "name": "Fillet_in_Bounds",
               "ioValues": [
@@ -2264,8 +2295,8 @@
             },
             {
               "atomType": "Rectangle",
-              "x": 0.6256613756613757,
-              "y": 0.9052924791086352,
+              "x": 0.5046296296296297,
+              "y": 0.9080779944289693,
               "uniqueID": "id-165710",
               "ioValues": [
                 {
@@ -2282,8 +2313,8 @@
             },
             {
               "atomType": "Extrude",
-              "x": 0.7256613756613757,
-              "y": 0.9052924791086352,
+              "x": 0.591931216931217,
+              "y": 0.935933147632312,
               "uniqueID": "id-165714",
               "ioValues": [
                 {
@@ -2293,6 +2324,30 @@
                 {
                   "name": "height",
                   "ioValue": 10
+                }
+              ]
+            },
+            {
+              "atomType": "Move",
+              "x": 0.656084656084656,
+              "y": 0.7910863509749304,
+              "uniqueID": "id-165718",
+              "ioValues": [
+                {
+                  "name": "geometry",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                },
+                {
+                  "name": "xDist",
+                  "ioValue": 0
+                },
+                {
+                  "name": "yDist",
+                  "ioValue": 0
+                },
+                {
+                  "name": "zDist",
+                  "ioValue": 13
                 }
               ]
             }
@@ -2349,16 +2404,194 @@
               "ap2ID": "id-165658"
             },
             {
+              "ap2Name": "Shape 3",
+              "ap1ID": "id-165658",
+              "ap2ID": "id-165622"
+            },
+            {
               "ap2Name": "geometry",
               "ap1ID": "id-165710",
               "ap2ID": "id-165714"
+            },
+            {
+              "ap2Name": "geometry",
+              "ap1ID": "id-165714",
+              "ap2ID": "id-165718"
+            },
+            {
+              "ap2Name": "Selection",
+              "ap1ID": "id-165718",
+              "ap2ID": "id-165658"
             }
           ],
           "fileTypeVersion": 1
+        },
+        {
+          "atomType": "Fusion",
+          "x": 0.40476190476190477,
+          "y": 0.5654596100278552,
+          "uniqueID": "id-165725",
+          "ioValues": [
+            {
+              "name": "Shape 1",
+              "ioValue": {
+                "geometry": "cut-cut-cut-cut-extrude-rectangle-26.5-34.5-{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]}--1.5-extrude-move-circle-1.5--10.5--13.5-0-{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]}--10-extrude-move-circle-1.5--10.5-13.5-0-{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]}--10-extrude-move-circle-1.5-10.5--13.5-0-{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]}--10-extrude-move-circle-1.5-10.5-13.5-0-{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]}--10",
+                "dimension": "3D",
+                "plane": {
+                  "origin": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "xDir": [
+                    1,
+                    0,
+                    0
+                  ],
+                  "normal": [
+                    0,
+                    0,
+                    1
+                  ]
+                },
+                "color": "#aad7f2",
+                "tags": [],
+                "bom": []
+              }
+            },
+            {
+              "name": "Shape 2",
+              "ioValue": {
+                "geometry": "fuse-f462194c-{\"geometry\":\"extrude-circle-13-{\\\"origin\\\":[0,0,0],\\\"xDir\\\":[1,0,0],\\\"normal\\\":[0,0,1]}-20\",\"dimension\":\"3D\",\"tags\":[],\"plane\":{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]},\"color\":\"#aad7f2\",\"bom\":[]}-10-{\"geometry\":\"move-extrude-rectangle-100-100-{\\\"origin\\\":[0,0,0],\\\"xDir\\\":[1,0,0],\\\"normal\\\":[0,0,1]}-10-0-0-13\",\"dimension\":\"3D\",\"plane\":{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]},\"color\":\"#aad7f2\",\"tags\":[],\"bom\":[]}-1-fuse-83967834-{\"geometry\":[{\"geometry\":\"7ed87374-{\\\"geometry\\\":\\\"extrude-circle-10-{\\\\\\\"origin\\\\\\\":[0,0,0],\\\\\\\"xDir\\\\\\\":[1,0,0],\\\\\\\"normal\\\\\\\":[0,0,1]}-5\\\",\\\"dimension\\\":\\\"3D\\\",\\\"tags\\\":[],\\\"plane\\\":{\\\"origin\\\":[0,0,0],\\\"xDir\\\":[1,0,0],\\\"normal\\\":[0,0,1]},\\\"color\\\":\\\"#aad7f2\\\",\\\"bom\\\":[]}-2-1\",\"dimension\":\"3D\",\"tags\":[],\"plane\":{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]},\"color\":\"#aad7f2\",\"bom\":[]}],\"tags\":[],\"color\":\"#aad7f2\",\"plane\":{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]},\"bom\":[],\"dimension\":\"3D\"}-{\"geometry\":\"extrude-circle-5.5-{\\\"origin\\\":[0,0,0],\\\"xDir\\\":[1,0,0],\\\"normal\\\":[0,0,1]}-25\",\"dimension\":\"3D\",\"tags\":[],\"plane\":{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]},\"color\":\"#aad7f2\",\"bom\":[]}-3-extrude-circle-5.5-{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]}-25",
+                "tags": [],
+                "bom": [],
+                "plane": {
+                  "origin": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "xDir": [
+                    1,
+                    0,
+                    0
+                  ],
+                  "normal": [
+                    0,
+                    0,
+                    1
+                  ]
+                },
+                "color": "#aad7f2",
+                "dimension": "3D"
+              }
+            }
+          ],
+          "unionType": "Fusion"
+        },
+        {
+          "atomType": "Color",
+          "x": 0.5105820105820106,
+          "y": 0.7103064066852367,
+          "uniqueID": "id-165730",
+          "ioValues": [
+            {
+              "name": "geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            }
+          ],
+          "selectedColor": "Black"
+        },
+        {
+          "atomType": "Add-BOM-Tag",
+          "x": 0.6263227513227514,
+          "y": 0.6100278551532033,
+          "uniqueID": "id-165733",
+          "name": "Add BOM Tag",
+          "ioValues": [
+            {
+              "name": "geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "Item Name",
+              "ioValue": "Arduino Joystick",
+              "currentEquation": "Arduino Joystick"
+            },
+            {
+              "name": "Number Needed",
+              "ioValue": 1
+            },
+            {
+              "name": "Cost (USD)",
+              "ioValue": 3.5
+            },
+            {
+              "name": "Source Link",
+              "ioValue": "https://amzn.to/421Nm9e",
+              "currentEquation": "https://amzn.to/421Nm9e"
+            }
+          ],
+          "BOMitem": {
+            "BOMitemName": "Arduino Joystick",
+            "numberNeeded": 1,
+            "costUSD": 3.5,
+            "source": "https://amzn.to/421Nm9e"
+          }
         }
       ],
-      "allConnectors": [],
+      "allConnectors": [
+        {
+          "ap2Name": "Shape 1",
+          "ap1ID": "id-165444",
+          "ap2ID": "id-165725"
+        },
+        {
+          "ap2Name": "Shape 2",
+          "ap1ID": "id-165530",
+          "ap2ID": "id-165725"
+        },
+        {
+          "ap2Name": "geometry",
+          "ap1ID": "id-165725",
+          "ap2ID": "id-165730"
+        },
+        {
+          "ap2Name": "geometry",
+          "ap1ID": "id-165730",
+          "ap2ID": "id-165733"
+        },
+        {
+          "ap2Name": "number or geometry",
+          "ap1ID": "id-165733",
+          "ap2ID": "id-165442"
+        }
+      ],
       "fileTypeVersion": 1
+    },
+    {
+      "atomType": "Move",
+      "x": 0.4801587301587301,
+      "y": 0.8440111420612814,
+      "uniqueID": "id-165740",
+      "ioValues": [
+        {
+          "name": "geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "xDist",
+          "ioValue": 0
+        },
+        {
+          "name": "yDist",
+          "ioValue": -34
+        },
+        {
+          "name": "zDist",
+          "ioValue": -13
+        }
+      ]
     }
   ],
   "allConnectors": [
@@ -2371,6 +2604,16 @@
       "ap2Name": "number or geometry",
       "ap1ID": "id-165436",
       "ap2ID": "id-165310"
+    },
+    {
+      "ap2Name": "geometry",
+      "ap1ID": "id-165440",
+      "ap2ID": "id-165740"
+    },
+    {
+      "ap2Name": "Shape 2",
+      "ap1ID": "id-165740",
+      "ap2ID": "id-165436"
     }
   ],
   "unitsKey": "MM",
