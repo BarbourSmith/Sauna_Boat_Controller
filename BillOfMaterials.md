@@ -2,4 +2,5 @@
 # Bill Of Materials 
  |Part|Number Needed|Price|Source| 
  |----|----------|-----|-----|
-|Total: |0|$0.00| |
+|SSD1306 Screen|1|$6.50|https://amzn.to/41Y3WH4|
+|Total: |1|$6.50| |
