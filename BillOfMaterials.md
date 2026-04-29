@@ -2,6 +2,7 @@
 # Bill Of Materials 
  |Part|Number Needed|Price|Source| 
  |----|----------|-----|-----|
+|Battery|1|$0.00||
 |SSD1306 Screen|1|$6.50|https://amzn.to/41Y3WH4|
 |Arduino Joystick|1|$3.50|https://amzn.to/421Nm9e|
-|Total: |2|$10.00| |
+|Total: |3|$10.00| |
