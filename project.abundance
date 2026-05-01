@@ -2247,8 +2247,8 @@
         },
         {
           "atomType": "Fusion",
-          "x": 0.28498727735368956,
-          "y": 0.6035087719298246,
+          "x": 0.23494486853265478,
+          "y": 0.48187134502923973,
           "uniqueID": "id-165725",
           "ioValues": [
             {
@@ -2310,8 +2310,8 @@
         },
         {
           "atomType": "Color",
-          "x": 0.5691263782866836,
-          "y": 0.4093567251461988,
+          "x": 0.3833757421543681,
+          "y": 0.36725146198830405,
           "uniqueID": "id-165730",
           "ioValues": [
             {
@@ -2323,8 +2323,8 @@
         },
         {
           "atomType": "Add-BOM-Tag",
-          "x": 0.7896522476675147,
-          "y": 0.4619883040935673,
+          "x": 0.6055979643765904,
+          "y": 0.34736842105263155,
           "uniqueID": "id-165733",
           "name": "Add BOM Tag",
           "ioValues": [
@@ -2360,8 +2360,8 @@
         },
         {
           "atomType": "Molecule",
-          "x": 0.2632275132275132,
-          "y": 0.29526462395543174,
+          "x": 0.06955046649703138,
+          "y": 0.3766081871345029,
           "uniqueID": "id-165444",
           "name": "Board",
           "topLevel": false,
@@ -3964,8 +3964,8 @@
         },
         {
           "atomType": "GitHubMolecule",
-          "x": 0.48176420695504657,
-          "y": 0.8842105263157894,
+          "x": 0.1806615776081425,
+          "y": 0.8292397660818712,
           "uniqueID": "id-168512",
           "name": "2D_Slice",
           "ioValues": [
@@ -5619,13 +5619,49 @@
         },
         {
           "atomType": "Extrude",
-          "x": 0.732824427480916,
-          "y": 0.7017543859649122,
+          "x": 0.30619168787107715,
+          "y": 0.7111111111111111,
           "uniqueID": "id-168706",
           "ioValues": [
             {
               "name": "geometry",
               "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "height",
+              "ioValue": -4
+            }
+          ]
+        },
+        {
+          "atomType": "Tag",
+          "x": 0.5385920271416454,
+          "y": 0.8245614035087718,
+          "uniqueID": "id-168716",
+          "name": "Bottom Half",
+          "ioValues": [
+            {
+              "name": "geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            }
+          ],
+          "tags": [
+            "Bottom Half"
+          ]
+        },
+        {
+          "atomType": "Assembly",
+          "x": 0.6692111959287532,
+          "y": 0.5789473684210527,
+          "uniqueID": "id-168719",
+          "ioValues": [
+            {
+              "name": "Shape 1",
+              "ioValue": null
+            },
+            {
+              "name": "Shape 2",
+              "ioValue": null
             }
           ]
         }
@@ -5647,9 +5683,9 @@
           "ap2ID": "id-165733"
         },
         {
-          "ap2Name": "number or geometry",
+          "ap2Name": "Shape 2",
           "ap1ID": "id-165733",
-          "ap2ID": "id-165442"
+          "ap2ID": "id-168719"
         },
         {
           "ap2Name": "Shape 1",
@@ -5662,9 +5698,24 @@
           "ap2ID": "id-165725"
         },
         {
-          "ap2Name": "height",
+          "ap2Name": "geometry",
           "ap1ID": "id-168512",
           "ap2ID": "id-168706"
+        },
+        {
+          "ap2Name": "geometry",
+          "ap1ID": "id-168706",
+          "ap2ID": "id-168716"
+        },
+        {
+          "ap2Name": "Shape 1",
+          "ap1ID": "id-168716",
+          "ap2ID": "id-168719"
+        },
+        {
+          "ap2Name": "number or geometry",
+          "ap1ID": "id-168719",
+          "ap2ID": "id-165442"
         }
       ],
       "fileTypeVersion": 1
