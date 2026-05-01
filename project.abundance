@@ -150,7 +150,7 @@
         },
         {
           "name": "xDist",
-          "ioValue": 0
+          "ioValue": 4
         },
         {
           "name": "yDist",
@@ -238,14 +238,14 @@
         },
         {
           "name": "Part Name",
-          "ioValue": "Sauna_Boat_Controller",
-          "currentEquation": "Sauna_Boat_Controller"
+          "ioValue": "Case Bottom Half",
+          "currentEquation": "Case Bottom Half"
         }
       ],
       "type": null,
       "resolution": 96,
       "importIndex": 0,
-      "partName": "Sauna_Boat_Controller"
+      "partName": "Case Bottom Half"
     },
     {
       "atomType": "ExtractTag",
@@ -283,14 +283,14 @@
         },
         {
           "name": "Part Name",
-          "ioValue": "Sauna_Boat_Controller",
-          "currentEquation": "Sauna_Boat_Controller"
+          "ioValue": "Case Top Half",
+          "currentEquation": "Case Top Half"
         }
       ],
       "type": null,
       "resolution": 96,
       "importIndex": 0,
-      "partName": "Sauna_Boat_Controller"
+      "partName": "Case Top Half"
     },
     {
       "atomType": "GitHubMolecule",
