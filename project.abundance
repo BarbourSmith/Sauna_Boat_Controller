@@ -20,8 +20,8 @@
     },
     {
       "atomType": "Assembly",
-      "x": 0.531084656084656,
-      "y": 0.2256267409470752,
+      "x": 0.5291005291005292,
+      "y": 0.21727019498607245,
       "uniqueID": "id-165436",
       "ioValues": [
         {
@@ -218,6 +218,81 @@
       "tagIndex": 0
     },
     {
+      "atomType": "Export",
+      "x": 0.8941798941798942,
+      "y": 0.713091922005571,
+      "uniqueID": "id-167503",
+      "ioValues": [
+        {
+          "name": "geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "File Type",
+          "ioValue": "STL",
+          "currentEquation": "STL"
+        },
+        {
+          "name": "Resolution (dpi)",
+          "ioValue": 96
+        },
+        {
+          "name": "Part Name",
+          "ioValue": "Sauna_Boat_Controller",
+          "currentEquation": "Sauna_Boat_Controller"
+        }
+      ],
+      "type": null,
+      "resolution": 96,
+      "importIndex": 0,
+      "partName": "Sauna_Boat_Controller"
+    },
+    {
+      "atomType": "ExtractTag",
+      "x": 0.7671957671957672,
+      "y": 0.25348189415041783,
+      "uniqueID": "id-167580",
+      "name": "Extract Tag",
+      "ioValues": [
+        {
+          "name": "geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        }
+      ],
+      "tag": "Top Half",
+      "tagIndex": 0
+    },
+    {
+      "atomType": "Export",
+      "x": 0.8624338624338624,
+      "y": 0.29526462395543174,
+      "uniqueID": "id-167583",
+      "ioValues": [
+        {
+          "name": "geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "File Type",
+          "ioValue": "STL",
+          "currentEquation": "STL"
+        },
+        {
+          "name": "Resolution (dpi)",
+          "ioValue": 96
+        },
+        {
+          "name": "Part Name",
+          "ioValue": "Sauna_Boat_Controller",
+          "currentEquation": "Sauna_Boat_Controller"
+        }
+      ],
+      "type": null,
+      "resolution": 96,
+      "importIndex": 0,
+      "partName": "Sauna_Boat_Controller"
+    },
+    {
       "atomType": "GitHubMolecule",
       "x": 0.20502645502645506,
       "y": 0.17548746518105848,
@@ -373,7 +448,7 @@
     },
     {
       "atomType": "Molecule",
-      "x": 0.29034391534391535,
+      "x": 0.28769841269841273,
       "y": 0.34818941504178275,
       "uniqueID": "id-165312",
       "name": "Screen",
@@ -431,11 +506,13 @@
           "ioValues": [
             {
               "name": "x length",
-              "ioValue": 25
+              "ioValue": 25.2,
+              "currentEquation": "25.2"
             },
             {
               "name": "y length",
-              "ioValue": 17
+              "ioValue": 17.2,
+              "currentEquation": "17.2"
             }
           ]
         },
@@ -464,7 +541,7 @@
             {
               "name": "Shape 1",
               "ioValue": {
-                "geometry": "extrude-move-rectangle-25-17-0-1.5-0-{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]}-1.6",
+                "geometry": "extrude-move-rectangle-25.2-17.2-0-1.5-0-{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]}-1.6",
                 "dimension": "3D",
                 "plane": {
                   "origin": [
@@ -578,11 +655,11 @@
           "uniqueID": "id-165413",
           "ioValues": [
             {
-              "name": "geometry1",
+              "name": "retain",
               "ioValue": "__GEOMETRY_INPUT__"
             },
             {
-              "name": "geometry2",
+              "name": "remove",
               "ioValue": "__GEOMETRY_INPUT__"
             }
           ]
@@ -1077,7 +1154,7 @@
           "ap2ID": "id-165364"
         },
         {
-          "ap2Name": "geometry2",
+          "ap2Name": "remove",
           "ap1ID": "id-165409",
           "ap2ID": "id-165413"
         },
@@ -1097,7 +1174,7 @@
           "ap2ID": "id-165424"
         },
         {
-          "ap2Name": "geometry1",
+          "ap2Name": "retain",
           "ap1ID": "id-165424",
           "ap2ID": "id-165413"
         },
@@ -1205,11 +1282,11 @@
           "uniqueID": "id-166685",
           "ioValues": [
             {
-              "name": "geometry1",
+              "name": "retain",
               "ioValue": "__GEOMETRY_INPUT__"
             },
             {
-              "name": "geometry2",
+              "name": "remove",
               "ioValue": "__GEOMETRY_INPUT__"
             }
           ]
@@ -1275,6 +1352,78 @@
             {
               "name": "Shape 2",
               "ioValue": null
+            }
+          ]
+        },
+        {
+          "atomType": "Rectangle",
+          "x": 0.05886243386243386,
+          "y": 0.7047353760445683,
+          "uniqueID": "id-167526",
+          "ioValues": [
+            {
+              "name": "x length",
+              "ioValue": 41
+            },
+            {
+              "name": "y length",
+              "ioValue": 108
+            }
+          ]
+        },
+        {
+          "atomType": "Extrude",
+          "x": 0.13425925925925927,
+          "y": 0.7910863509749304,
+          "uniqueID": "id-167527",
+          "ioValues": [
+            {
+              "name": "geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "height",
+              "ioValue": -18
+            }
+          ]
+        },
+        {
+          "atomType": "Move",
+          "x": 0.2268518518518519,
+          "y": 0.6685236768802229,
+          "uniqueID": "id-167534",
+          "ioValues": [
+            {
+              "name": "geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "xDist",
+              "ioValue": 0
+            },
+            {
+              "name": "yDist",
+              "ioValue": 0
+            },
+            {
+              "name": "zDist",
+              "ioValue": -1
+            }
+          ]
+        },
+        {
+          "atomType": "Difference",
+          "x": 0.4391534391534392,
+          "y": 0.467966573816156,
+          "uniqueID": "id-167576",
+          "ioValues": [
+            {
+              "name": "retain",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "remove",
+              "ioValue": "__GEOMETRY_INPUT__"
             }
           ]
         },
@@ -1365,10 +1514,6 @@
                 {
                   "name": "radius",
                   "ioValue": 6
-                },
-                {
-                  "name": "inputShape",
-                  "ioValue": "__GEOMETRY_INPUT__"
                 }
               ],
               "codeVersion": 1,
@@ -1383,6 +1528,10 @@
                 {
                   "name": "radius",
                   "ioValue": 2
+                },
+                {
+                  "name": "inputShape",
+                  "ioValue": "__GEOMETRY_INPUT__"
                 }
               ],
               "codeVersion": 1,
@@ -1481,62 +1630,6 @@
           "lastReloadedFromGithubAt": 1777420944845
         },
         {
-          "atomType": "Rectangle",
-          "x": 0.05886243386243386,
-          "y": 0.7047353760445683,
-          "uniqueID": "id-167526",
-          "ioValues": [
-            {
-              "name": "x length",
-              "ioValue": 41
-            },
-            {
-              "name": "y length",
-              "ioValue": 108
-            }
-          ]
-        },
-        {
-          "atomType": "Extrude",
-          "x": 0.13425925925925927,
-          "y": 0.7910863509749304,
-          "uniqueID": "id-167527",
-          "ioValues": [
-            {
-              "name": "geometry",
-              "ioValue": "__GEOMETRY_INPUT__"
-            },
-            {
-              "name": "height",
-              "ioValue": -18
-            }
-          ]
-        },
-        {
-          "atomType": "Move",
-          "x": 0.2268518518518519,
-          "y": 0.6685236768802229,
-          "uniqueID": "id-167534",
-          "ioValues": [
-            {
-              "name": "geometry",
-              "ioValue": "__GEOMETRY_INPUT__"
-            },
-            {
-              "name": "xDist",
-              "ioValue": 0
-            },
-            {
-              "name": "yDist",
-              "ioValue": 0
-            },
-            {
-              "name": "zDist",
-              "ioValue": -1
-            }
-          ]
-        },
-        {
           "atomType": "GitHubMolecule",
           "x": 0.2996031746031746,
           "y": 0.6629526462395543,
@@ -1623,6 +1716,10 @@
                 {
                   "name": "radius",
                   "ioValue": 6
+                },
+                {
+                  "name": "inputShape",
+                  "ioValue": "__GEOMETRY_INPUT__"
                 }
               ],
               "codeVersion": 1,
@@ -1637,10 +1734,6 @@
                 {
                   "name": "radius",
                   "ioValue": 2
-                },
-                {
-                  "name": "inputShape",
-                  "ioValue": "__GEOMETRY_INPUT__"
                 }
               ],
               "codeVersion": 1,
@@ -1737,22 +1830,6 @@
           "unitsKey": "MM",
           "fileTypeVersion": 1,
           "lastReloadedFromGithubAt": 1777420944845
-        },
-        {
-          "atomType": "Difference",
-          "x": 0.4391534391534392,
-          "y": 0.467966573816156,
-          "uniqueID": "id-167576",
-          "ioValues": [
-            {
-              "name": "geometry1",
-              "ioValue": "__GEOMETRY_INPUT__"
-            },
-            {
-              "name": "geometry2",
-              "ioValue": "__GEOMETRY_INPUT__"
-            }
-          ]
         }
       ],
       "allConnectors": [
@@ -1777,7 +1854,7 @@
           "ap2ID": "id-166689"
         },
         {
-          "ap2Name": "geometry2",
+          "ap2Name": "remove",
           "ap1ID": "id-166681",
           "ap2ID": "id-166685"
         },
@@ -1807,11 +1884,6 @@
           "ap2ID": "id-166626"
         },
         {
-          "ap2Name": "geometry1",
-          "ap1ID": "id-166650",
-          "ap2ID": "id-167576"
-        },
-        {
           "ap2Name": "geometry",
           "ap1ID": "id-167526",
           "ap2ID": "id-167527"
@@ -1827,12 +1899,7 @@
           "ap2ID": "id-167540"
         },
         {
-          "ap2Name": "geometry2",
-          "ap1ID": "id-167540",
-          "ap2ID": "id-167576"
-        },
-        {
-          "ap2Name": "geometry1",
+          "ap2Name": "retain",
           "ap1ID": "id-167576",
           "ap2ID": "id-166685"
         },
@@ -1840,6 +1907,16 @@
           "ap2Name": "geometry2",
           "ap1ID": "id-167576",
           "ap2ID": "id-166689"
+        },
+        {
+          "ap2Name": "retain",
+          "ap1ID": "id-166650",
+          "ap2ID": "id-167576"
+        },
+        {
+          "ap2Name": "remove",
+          "ap1ID": "id-167540",
+          "ap2ID": "id-167576"
         }
       ],
       "fileTypeVersion": 1
@@ -2052,10 +2129,6 @@
                     {
                       "name": "radius",
                       "ioValue": 2
-                    },
-                    {
-                      "name": "inputShape",
-                      "ioValue": "__GEOMETRY_INPUT__"
                     }
                   ],
                   "codeVersion": 1,
@@ -2370,11 +2443,11 @@
               "uniqueID": "id-165526",
               "ioValues": [
                 {
-                  "name": "geometry1",
+                  "name": "retain",
                   "ioValue": "__GEOMETRY_INPUT__"
                 },
                 {
-                  "name": "geometry2",
+                  "name": "remove",
                   "ioValue": "__GEOMETRY_INPUT__"
                 }
               ]
@@ -2752,7 +2825,7 @@
               "ap2ID": "id-165452"
             },
             {
-              "ap2Name": "geometry1",
+              "ap2Name": "retain",
               "ap1ID": "id-165452",
               "ap2ID": "id-165526"
             },
@@ -2762,7 +2835,7 @@
               "ap2ID": "id-165477"
             },
             {
-              "ap2Name": "geometry2",
+              "ap2Name": "remove",
               "ap1ID": "id-165522",
               "ap2ID": "id-165526"
             },
@@ -3142,6 +3215,10 @@
                     {
                       "name": "radius",
                       "ioValue": 2
+                    },
+                    {
+                      "name": "inputShape",
+                      "ioValue": "__GEOMETRY_INPUT__"
                     }
                   ],
                   "codeVersion": 1,
@@ -3156,10 +3233,6 @@
                     {
                       "name": "radius",
                       "ioValue": 2
-                    },
-                    {
-                      "name": "inputShape",
-                      "ioValue": "__GEOMETRY_INPUT__"
                     }
                   ],
                   "codeVersion": 1,
@@ -3675,11 +3748,11 @@
                       "uniqueID": "id-165654",
                       "ioValues": [
                         {
-                          "name": "geometry1",
+                          "name": "retain",
                           "ioValue": "__GEOMETRY_INPUT__"
                         },
                         {
-                          "name": "geometry2",
+                          "name": "remove",
                           "ioValue": "__GEOMETRY_INPUT__"
                         }
                       ]
@@ -3697,12 +3770,12 @@
                       "ap2ID": "id-165653"
                     },
                     {
-                      "ap2Name": "geometry1",
+                      "ap2Name": "retain",
                       "ap1ID": "id-165652",
                       "ap2ID": "id-165654"
                     },
                     {
-                      "ap2Name": "geometry2",
+                      "ap2Name": "remove",
                       "ap1ID": "id-165653",
                       "ap2ID": "id-165654"
                     },
@@ -4062,11 +4135,11 @@
               "uniqueID": "id-166067",
               "ioValues": [
                 {
-                  "name": "geometry1",
+                  "name": "retain",
                   "ioValue": "__GEOMETRY_INPUT__"
                 },
                 {
-                  "name": "geometry2",
+                  "name": "remove",
                   "ioValue": "__GEOMETRY_INPUT__"
                 }
               ]
@@ -4469,6 +4542,10 @@
                         {
                           "name": "radius",
                           "ioValue": 2
+                        },
+                        {
+                          "name": "inputShape",
+                          "ioValue": "__GEOMETRY_INPUT__"
                         }
                       ],
                       "codeVersion": 1,
@@ -5537,11 +5614,11 @@
                       "uniqueID": "id-166127",
                       "ioValues": [
                         {
-                          "name": "geometry1",
+                          "name": "retain",
                           "ioValue": "__GEOMETRY_INPUT__"
                         },
                         {
-                          "name": "geometry2",
+                          "name": "remove",
                           "ioValue": "__GEOMETRY_INPUT__"
                         }
                       ]
@@ -6250,7 +6327,7 @@
                                 },
                                 {
                                   "name": "Shape 5",
-                                  "ioValue": ""
+                                  "ioValue": "__GEOMETRY_INPUT__"
                                 },
                                 {
                                   "name": "Shape 1",
@@ -6578,12 +6655,12 @@
                   ],
                   "allConnectors": [
                     {
-                      "ap2Name": "geometry2",
+                      "ap2Name": "remove",
                       "ap1ID": "id-166125",
                       "ap2ID": "id-166127"
                     },
                     {
-                      "ap2Name": "geometry1",
+                      "ap2Name": "retain",
                       "ap1ID": "id-166126",
                       "ap2ID": "id-166127"
                     },
@@ -6698,7 +6775,7 @@
               "ap2ID": "id-166065"
             },
             {
-              "ap2Name": "geometry1",
+              "ap2Name": "retain",
               "ap1ID": "id-166066",
               "ap2ID": "id-166067"
             },
@@ -6713,7 +6790,7 @@
               "ap2ID": "id-166061"
             },
             {
-              "ap2Name": "geometry2",
+              "ap2Name": "remove",
               "ap1ID": "id-166069",
               "ap2ID": "id-166067"
             },
@@ -6739,81 +6816,6 @@
         }
       ],
       "fileTypeVersion": 1
-    },
-    {
-      "atomType": "Export",
-      "x": 0.8941798941798942,
-      "y": 0.713091922005571,
-      "uniqueID": "id-167503",
-      "ioValues": [
-        {
-          "name": "geometry",
-          "ioValue": "__GEOMETRY_INPUT__"
-        },
-        {
-          "name": "File Type",
-          "ioValue": "STL",
-          "currentEquation": "STL"
-        },
-        {
-          "name": "Resolution (dpi)",
-          "ioValue": 96
-        },
-        {
-          "name": "Part Name",
-          "ioValue": "Sauna_Boat_Controller",
-          "currentEquation": "Sauna_Boat_Controller"
-        }
-      ],
-      "type": null,
-      "resolution": 96,
-      "importIndex": 0,
-      "partName": "Sauna_Boat_Controller"
-    },
-    {
-      "atomType": "ExtractTag",
-      "x": 0.7671957671957672,
-      "y": 0.25348189415041783,
-      "uniqueID": "id-167580",
-      "name": "Extract Tag",
-      "ioValues": [
-        {
-          "name": "geometry",
-          "ioValue": "__GEOMETRY_INPUT__"
-        }
-      ],
-      "tag": "Top Half",
-      "tagIndex": 0
-    },
-    {
-      "atomType": "Export",
-      "x": 0.8624338624338624,
-      "y": 0.29526462395543174,
-      "uniqueID": "id-167583",
-      "ioValues": [
-        {
-          "name": "geometry",
-          "ioValue": "__GEOMETRY_INPUT__"
-        },
-        {
-          "name": "File Type",
-          "ioValue": "STL",
-          "currentEquation": "STL"
-        },
-        {
-          "name": "Resolution (dpi)",
-          "ioValue": 96
-        },
-        {
-          "name": "Part Name",
-          "ioValue": "Sauna_Boat_Controller",
-          "currentEquation": "Sauna_Boat_Controller"
-        }
-      ],
-      "type": null,
-      "resolution": 96,
-      "importIndex": 0,
-      "partName": "Sauna_Boat_Controller"
     }
   ],
   "allConnectors": [
@@ -6874,6 +6876,11 @@
     },
     {
       "ap2Name": "geometry",
+      "ap1ID": "id-167580",
+      "ap2ID": "id-167583"
+    },
+    {
+      "ap2Name": "geometry",
       "ap1ID": "id-166583",
       "ap2ID": "id-166603"
     },
@@ -6901,11 +6908,6 @@
       "ap2Name": "Geometry",
       "ap1ID": "id-166052",
       "ap2ID": "id-166583"
-    },
-    {
-      "ap2Name": "geometry",
-      "ap1ID": "id-167580",
-      "ap2ID": "id-167583"
     }
   ],
   "unitsKey": "MM",
