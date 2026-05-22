@@ -20,8 +20,8 @@
     },
     {
       "atomType": "Assembly",
-      "x": 0.5291005291005292,
-      "y": 0.21727019498607245,
+      "x": 0.5324074074074074,
+      "y": 0.22005571030640667,
       "uniqueID": "id-165436",
       "ioValues": [
         {
@@ -93,7 +93,7 @@
     {
       "atomType": "Move",
       "x": 0.36243386243386244,
-      "y": 0.7520891364902507,
+      "y": 0.7493036211699164,
       "uniqueID": "id-166565",
       "ioValues": [
         {
@@ -110,7 +110,7 @@
         },
         {
           "name": "zDist",
-          "ioValue": -14
+          "ioValue": -17
         }
       ]
     },
@@ -329,7 +329,7 @@
               "ioValue": "__GEOMETRY_INPUT__"
             }
           ],
-          "codeVersion": 1,
+          "interpreterVersion": 0,
           "code": "/**\n Inputs for this Code Atom:\n - Takes a single geometry input \"A\" and recenters it in the XY plane based on its bounding box.\n*/\nInputs = [\n  { inputName: \"A\", type: \"geometry\", defaultValue: null }\n]\n\nif (!A) {\n  // Nothing to do if no input provided\n  return null\n}\n\n// Get bounding box of A\nlet boundsA = await GetBounds(A);\n// boundsA.min and boundsA.max are arrays [x,y,z]\nlet min = boundsA.min\nlet max = boundsA.max\n\n// Compute the center of the bounding box in X and Y\nlet centerX = (min[0] + max[0]) / 2.0\nlet centerY = (min[1] + max[1]) / 2.0\n\n// Translation to move the bounding box center to the origin (0,0) in XY,\n// leaving Z unchanged.\nlet translationX = -centerX\nlet translationY = -centerY\nlet translationZ = 0\n\n// Move the shape. Move takes the input ID and translations (x,y,z)\nlet movedOutput = await Move(A, translationX, translationY, translationZ)\n\n// Return the moved shape. Move typically returns a replicad object suitable for return.\nreturn movedOutput"
         },
         {
@@ -1510,15 +1510,15 @@
               "uniqueID": "id-166646",
               "ioValues": [
                 {
-                  "name": "radius",
-                  "ioValue": 6
+                  "name": "inputShape",
+                  "ioValue": "__GEOMETRY_INPUT__"
                 },
                 {
-                  "name": "inputShape",
+                  "name": "radius",
                   "ioValue": "__GEOMETRY_INPUT__"
                 }
               ],
-              "codeVersion": 1,
+              "interpreterVersion": 0,
               "code": "      //Inputs:[inputShape, radius]\n      //This defines the molecules inputs and creates variables with the same names which can be referenced in the code\n      \n      //Takes the address and gets the shape from the library\n      let importedShape = library[inputShape]\n      \n      //This makes a new copy of of the shape (to prevent garbage collection issues),\n      //and moves it in the X direction. Note that this will not work if the input is an assembly\n      let chamferedShape = await Fillet(inputShape, radius);\n      \n      \n      //Shapes stored in the library have tags, a color, a plane, and a bill of materials like this. We don't modify them here\n      let shape1 = {\n        geometry: [chamferedShape],\n        tags: importedShape.tags,\n        color: importedShape.color,\n        plane: importedShape.plane,\n        bom: importedShape.bom\n      }\n      \n      //We could at this point return shape1 as a complete shape and it will be automatically written to the library for us\n      return shape1"
             },
             {
@@ -1528,11 +1528,15 @@
               "uniqueID": "id-166647",
               "ioValues": [
                 {
+                  "name": "inputShape",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                },
+                {
                   "name": "radius",
-                  "ioValue": 2
+                  "ioValue": "__GEOMETRY_INPUT__"
                 }
               ],
-              "codeVersion": 1,
+              "interpreterVersion": 0,
               "code": "      //Inputs:[inputShape, radius]\n      //This defines the molecules inputs and creates variables with the same names which can be referenced in the code\n      \n      //Takes the address and gets the shape from the library\n      let importedShape = library[inputShape]\n      \n      //This makes a new copy of of the shape (to prevent garbage collection issues),\n      //and moves it in the X direction. Note that this will not work if the input is an assembly\n      let chamferedShape = await Fillet(inputShape, radius);\n      \n      \n      //Shapes stored in the library have tags, a color, a plane, and a bill of materials like this. We don't modify them here\n      let shape1 = {\n        geometry: [chamferedShape],\n        tags: importedShape.tags,\n        color: importedShape.color,\n        plane: importedShape.plane,\n        bom: importedShape.bom\n      }\n      \n      //We could at this point return shape1 as a complete shape and it will be automatically written to the library for us\n      return shape1"
             },
             {
@@ -1712,11 +1716,15 @@
               "uniqueID": "id-167546",
               "ioValues": [
                 {
+                  "name": "inputShape",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                },
+                {
                   "name": "radius",
-                  "ioValue": 6
+                  "ioValue": "__GEOMETRY_INPUT__"
                 }
               ],
-              "codeVersion": 1,
+              "interpreterVersion": 0,
               "code": "      //Inputs:[inputShape, radius]\n      //This defines the molecules inputs and creates variables with the same names which can be referenced in the code\n      \n      //Takes the address and gets the shape from the library\n      let importedShape = library[inputShape]\n      \n      //This makes a new copy of of the shape (to prevent garbage collection issues),\n      //and moves it in the X direction. Note that this will not work if the input is an assembly\n      let chamferedShape = await Fillet(inputShape, radius);\n      \n      \n      //Shapes stored in the library have tags, a color, a plane, and a bill of materials like this. We don't modify them here\n      let shape1 = {\n        geometry: [chamferedShape],\n        tags: importedShape.tags,\n        color: importedShape.color,\n        plane: importedShape.plane,\n        bom: importedShape.bom\n      }\n      \n      //We could at this point return shape1 as a complete shape and it will be automatically written to the library for us\n      return shape1"
             },
             {
@@ -1726,15 +1734,15 @@
               "uniqueID": "id-167547",
               "ioValues": [
                 {
-                  "name": "radius",
-                  "ioValue": 2
+                  "name": "inputShape",
+                  "ioValue": "__GEOMETRY_INPUT__"
                 },
                 {
-                  "name": "inputShape",
+                  "name": "radius",
                   "ioValue": "__GEOMETRY_INPUT__"
                 }
               ],
-              "codeVersion": 1,
+              "interpreterVersion": 0,
               "code": "      //Inputs:[inputShape, radius]\n      //This defines the molecules inputs and creates variables with the same names which can be referenced in the code\n      \n      //Takes the address and gets the shape from the library\n      let importedShape = library[inputShape]\n      \n      //This makes a new copy of of the shape (to prevent garbage collection issues),\n      //and moves it in the X direction. Note that this will not work if the input is an assembly\n      let chamferedShape = await Fillet(inputShape, radius);\n      \n      \n      //Shapes stored in the library have tags, a color, a plane, and a bill of materials like this. We don't modify them here\n      let shape1 = {\n        geometry: [chamferedShape],\n        tags: importedShape.tags,\n        color: importedShape.color,\n        plane: importedShape.plane,\n        bom: importedShape.bom\n      }\n      \n      //We could at this point return shape1 as a complete shape and it will be automatically written to the library for us\n      return shape1"
             },
             {
@@ -2143,18 +2151,20 @@
               "ioValues": [
                 {
                   "name": "x length",
-                  "ioValue": 52
+                  "ioValue": 50,
+                  "currentEquation": "50"
                 },
                 {
                   "name": "y length",
-                  "ioValue": 20
+                  "ioValue": 22,
+                  "currentEquation": "22"
                 }
               ]
             },
             {
               "atomType": "Extrude",
-              "x": 0.2466931216931217,
-              "y": 0.6991643454038997,
+              "x": 0.2447089947089947,
+              "y": 0.6963788300835655,
               "uniqueID": "id-166514",
               "ioValues": [
                 {
@@ -2163,7 +2173,8 @@
                 },
                 {
                   "name": "height",
-                  "ioValue": 5
+                  "ioValue": 10,
+                  "currentEquation": "10"
                 }
               ]
             },
@@ -2301,15 +2312,15 @@
                   "uniqueID": "id-166523",
                   "ioValues": [
                     {
-                      "name": "radius",
-                      "ioValue": 2
+                      "name": "inputShape",
+                      "ioValue": "__GEOMETRY_INPUT__"
                     },
                     {
-                      "name": "inputShape",
+                      "name": "radius",
                       "ioValue": "__GEOMETRY_INPUT__"
                     }
                   ],
-                  "codeVersion": 1,
+                  "interpreterVersion": 0,
                   "code": "      //Inputs:[inputShape, radius]\n      //This defines the molecules inputs and creates variables with the same names which can be referenced in the code\n      \n      //Takes the address and gets the shape from the library\n      let importedShape = library[inputShape]\n      \n      //This makes a new copy of of the shape (to prevent garbage collection issues),\n      //and moves it in the X direction. Note that this will not work if the input is an assembly\n      let chamferedShape = await Fillet(inputShape, radius);\n      \n      \n      //Shapes stored in the library have tags, a color, a plane, and a bill of materials like this. We don't modify them here\n      let shape1 = {\n        geometry: [chamferedShape],\n        tags: importedShape.tags,\n        color: importedShape.color,\n        plane: importedShape.plane,\n        bom: importedShape.bom\n      }\n      \n      //We could at this point return shape1 as a complete shape and it will be automatically written to the library for us\n      return shape1"
                 }
               ],
@@ -2457,7 +2468,7 @@
             {
               "name": "Shape 2",
               "ioValue": {
-                "geometry": "fuse-f462194c-{\"geometry\":\"extrude-circle-13-{\\\"origin\\\":[0,0,0],\\\"xDir\\\":[1,0,0],\\\"normal\\\":[0,0,1]}-20\",\"dimension\":\"3D\",\"tags\":[],\"plane\":{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]},\"color\":\"#aad7f2\",\"bom\":[]}-10-{\"geometry\":\"move-extrude-rectangle-100-100-{\\\"origin\\\":[0,0,0],\\\"xDir\\\":[1,0,0],\\\"normal\\\":[0,0,1]}-10-0-0-13\",\"dimension\":\"3D\",\"plane\":{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]},\"color\":\"#aad7f2\",\"tags\":[],\"bom\":[]}-1-fuse-83967834-{\"geometry\":[{\"geometry\":\"7ed87374-2-{\\\"geometry\\\":\\\"extrude-circle-10-{\\\\\\\"origin\\\\\\\":[0,0,0],\\\\\\\"xDir\\\\\\\":[1,0,0],\\\\\\\"normal\\\\\\\":[0,0,1]}-5\\\",\\\"dimension\\\":\\\"3D\\\",\\\"tags\\\":[],\\\"plane\\\":{\\\"origin\\\":[0,0,0],\\\"xDir\\\":[1,0,0],\\\"normal\\\":[0,0,1]},\\\"color\\\":\\\"#aad7f2\\\",\\\"bom\\\":[]}-1\",\"dimension\":\"3D\",\"tags\":[],\"plane\":{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]},\"color\":\"#aad7f2\",\"bom\":[]}],\"tags\":[],\"color\":\"#aad7f2\",\"plane\":{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]},\"bom\":[],\"dimension\":\"3D\"}-{\"geometry\":\"extrude-circle-5.5-{\\\"origin\\\":[0,0,0],\\\"xDir\\\":[1,0,0],\\\"normal\\\":[0,0,1]}-25\",\"dimension\":\"3D\",\"tags\":[],\"plane\":{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]},\"color\":\"#aad7f2\",\"bom\":[]}-3-extrude-circle-5.5-{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]}-25",
+                "geometry": "fuse-f462194c-{\"geometry\":\"extrude-circle-13-{\\\"origin\\\":[0,0,0],\\\"xDir\\\":[1,0,0],\\\"normal\\\":[0,0,1]}-20\",\"dimension\":\"3D\",\"tags\":[],\"plane\":{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]},\"color\":\"#aad7f2\",\"bom\":[]}-10-{\"geometry\":\"move-extrude-rectangle-100-100-{\\\"origin\\\":[0,0,0],\\\"xDir\\\":[1,0,0],\\\"normal\\\":[0,0,1]}-10-0-0-13\",\"dimension\":\"3D\",\"plane\":{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]},\"color\":\"#aad7f2\",\"tags\":[],\"bom\":[]}-1-fuse-83967834-{\"geometry\":[{\"geometry\":\"7ed87374-{\\\"geometry\\\":\\\"extrude-circle-10-{\\\\\\\"origin\\\\\\\":[0,0,0],\\\\\\\"xDir\\\\\\\":[1,0,0],\\\\\\\"normal\\\\\\\":[0,0,1]}-5\\\",\\\"dimension\\\":\\\"3D\\\",\\\"tags\\\":[],\\\"plane\\\":{\\\"origin\\\":[0,0,0],\\\"xDir\\\":[1,0,0],\\\"normal\\\":[0,0,1]},\\\"color\\\":\\\"#aad7f2\\\",\\\"bom\\\":[]}-2-1\",\"dimension\":\"3D\",\"tags\":[],\"plane\":{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]},\"color\":\"#aad7f2\",\"bom\":[]}],\"tags\":[],\"color\":\"#aad7f2\",\"plane\":{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]},\"bom\":[],\"dimension\":\"3D\"}-{\"geometry\":\"extrude-circle-5.5-{\\\"origin\\\":[0,0,0],\\\"xDir\\\":[1,0,0],\\\"normal\\\":[0,0,1]}-25\",\"dimension\":\"3D\",\"tags\":[],\"plane\":{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]},\"color\":\"#aad7f2\",\"bom\":[]}-3-extrude-circle-5.5-{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]}-25",
                 "tags": [],
                 "bom": [],
                 "plane": {
@@ -2552,8 +2563,8 @@
         },
         {
           "atomType": "Tag",
-          "x": 0.5385920271416454,
-          "y": 0.8245614035087718,
+          "x": 0.5330687830687831,
+          "y": 0.818941504178273,
           "uniqueID": "id-168716",
           "name": "Bottom Half",
           "ioValues": [
@@ -2568,8 +2579,8 @@
         },
         {
           "atomType": "Assembly",
-          "x": 0.6692111959287532,
-          "y": 0.5789473684210527,
+          "x": 0.6693121693121693,
+          "y": 0.7158774373259054,
           "uniqueID": "id-168719",
           "ioValues": [
             {
@@ -3165,7 +3176,7 @@
                   "ioValue": {
                     "geometry": [
                       {
-                        "geometry": "83967834-{\"geometry\":[{\"geometry\":\"7ed87374-2-{\\\"geometry\\\":\\\"extrude-circle-10-{\\\\\\\"origin\\\\\\\":[0,0,0],\\\\\\\"xDir\\\\\\\":[1,0,0],\\\\\\\"normal\\\\\\\":[0,0,1]}-5\\\",\\\"dimension\\\":\\\"3D\\\",\\\"tags\\\":[],\\\"plane\\\":{\\\"origin\\\":[0,0,0],\\\"xDir\\\":[1,0,0],\\\"normal\\\":[0,0,1]},\\\"color\\\":\\\"#aad7f2\\\",\\\"bom\\\":[]}-1\",\"dimension\":\"3D\",\"tags\":[],\"plane\":{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]},\"color\":\"#aad7f2\",\"bom\":[]}],\"tags\":[],\"color\":\"#aad7f2\",\"plane\":{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]},\"bom\":[],\"dimension\":\"3D\"}-{\"geometry\":\"extrude-circle-5.5-{\\\"origin\\\":[0,0,0],\\\"xDir\\\":[1,0,0],\\\"normal\\\":[0,0,1]}-25\",\"dimension\":\"3D\",\"tags\":[],\"plane\":{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]},\"color\":\"#aad7f2\",\"bom\":[]}-3",
+                        "geometry": "83967834-{\"geometry\":[{\"geometry\":\"7ed87374-{\\\"geometry\\\":\\\"extrude-circle-10-{\\\\\\\"origin\\\\\\\":[0,0,0],\\\\\\\"xDir\\\\\\\":[1,0,0],\\\\\\\"normal\\\\\\\":[0,0,1]}-5\\\",\\\"dimension\\\":\\\"3D\\\",\\\"tags\\\":[],\\\"plane\\\":{\\\"origin\\\":[0,0,0],\\\"xDir\\\":[1,0,0],\\\"normal\\\":[0,0,1]},\\\"color\\\":\\\"#aad7f2\\\",\\\"bom\\\":[]}-2-1\",\"dimension\":\"3D\",\"tags\":[],\"plane\":{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]},\"color\":\"#aad7f2\",\"bom\":[]}],\"tags\":[],\"color\":\"#aad7f2\",\"plane\":{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]},\"bom\":[],\"dimension\":\"3D\"}-{\"geometry\":\"extrude-circle-5.5-{\\\"origin\\\":[0,0,0],\\\"xDir\\\":[1,0,0],\\\"normal\\\":[0,0,1]}-25\",\"dimension\":\"3D\",\"tags\":[],\"plane\":{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]},\"color\":\"#aad7f2\",\"bom\":[]}-3",
                         "dimension": "3D",
                         "tags": [],
                         "plane": {
@@ -3439,11 +3450,15 @@
                   "uniqueID": "id-165558",
                   "ioValues": [
                     {
+                      "name": "inputShape",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
                       "name": "radius",
-                      "ioValue": 2
+                      "ioValue": "__GEOMETRY_INPUT__"
                     }
                   ],
-                  "codeVersion": 1,
+                  "interpreterVersion": 0,
                   "code": "      //Inputs:[inputShape, radius]\n      //This defines the molecules inputs and creates variables with the same names which can be referenced in the code\n      \n      //Takes the address and gets the shape from the library\n      let importedShape = library[inputShape]\n      \n      //This makes a new copy of of the shape (to prevent garbage collection issues),\n      //and moves it in the X direction. Note that this will not work if the input is an assembly\n      let chamferedShape = await Fillet(inputShape, radius);\n      \n      \n      //Shapes stored in the library have tags, a color, a plane, and a bill of materials like this. We don't modify them here\n      let shape1 = {\n        geometry: [chamferedShape],\n        tags: importedShape.tags,\n        color: importedShape.color,\n        plane: importedShape.plane,\n        bom: importedShape.bom\n      }\n      \n      //We could at this point return shape1 as a complete shape and it will be automatically written to the library for us\n      return shape1"
                 },
                 {
@@ -3453,15 +3468,15 @@
                   "uniqueID": "id-165559",
                   "ioValues": [
                     {
-                      "name": "radius",
-                      "ioValue": 2
+                      "name": "inputShape",
+                      "ioValue": "__GEOMETRY_INPUT__"
                     },
                     {
-                      "name": "inputShape",
+                      "name": "radius",
                       "ioValue": "__GEOMETRY_INPUT__"
                     }
                   ],
-                  "codeVersion": 1,
+                  "interpreterVersion": 0,
                   "code": "      //Inputs:[inputShape, radius]\n      //This defines the molecules inputs and creates variables with the same names which can be referenced in the code\n      \n      //Takes the address and gets the shape from the library\n      let importedShape = library[inputShape]\n      \n      //This makes a new copy of of the shape (to prevent garbage collection issues),\n      //and moves it in the X direction. Note that this will not work if the input is an assembly\n      let chamferedShape = await Fillet(inputShape, radius);\n      \n      \n      //Shapes stored in the library have tags, a color, a plane, and a bill of materials like this. We don't modify them here\n      let shape1 = {\n        geometry: [chamferedShape],\n        tags: importedShape.tags,\n        color: importedShape.color,\n        plane: importedShape.plane,\n        bom: importedShape.bom\n      }\n      \n      //We could at this point return shape1 as a complete shape and it will be automatically written to the library for us\n      return shape1"
                 },
                 {
@@ -3617,7 +3632,7 @@
                       "ioValue": "__GEOMETRY_INPUT__"
                     }
                   ],
-                  "codeVersion": 1,
+                  "interpreterVersion": 0,
                   "code": "\n      Inputs = [\n       {inputName: \"A\", type: \"geometry\", defaultValue: null},\n        {inputName: \"B\", type: \"geometry\", defaultValue: null}\n      ]\n      //This defines the molecules inputs and creates variables with the same names which can be referenced in the code\n\n      let boundsA = await GetBounds(A);\n      let A_minZ = boundsA.min[2];\n\n      let B_maxZ = 0;\n      if(B){\n          let boundsB = await GetBounds(B);\n          console.log(\"Bounding Box B:  \");\n          console.log(boundsB);\n          B_maxZ  = boundsB.max[2];\n      }\n\n     let translationZ = B_maxZ - A_minZ;\n     \n      let movedOutput = await Move(A, 0, 0, translationZ);\n\n      return movedOutput;\n\n      // //We can also create a new shape from scratch\n      // let createdRectangle = replicad.drawRectangle(5,7)\n      // //This is the plane we are going to put our new shape on\n      // const newPlane = new replicad.Plane().pivot(0, 'Y');\n      // //And we extrude the shape to make it 3D\n      // let createdShape = createdRectangle.sketchOnPlane(newPlane).extrude(height)\n\n      // //For our new geometry we need to define the tags, color, plane, etc\n      // let shape2 = {\n      //     geometry: [createdShape],\n      //     tags: [\"aTag\"],\n      //     color: '#A3CE5B',\n      //     plane: newPlane,\n      //     bom: []\n      // }\n\n      // //Then we can return our created shape in just the same way\n      // //return shape2\n\n      // //If we want to return both shapes at once, we can create an assembly with them\n      // let anAssembly = {\n      //   geometry: [shape1, shape2],\n      //   tags: [\"aNewTag\"],\n      //   color: '#A3CF5B',\n      //   plane: newPlane,\n      //   bom: []\n      // }\n\n      // //And we can return that in the same way\n      // return anAssembly\n\n      /**\n      To Use the Code Atom, enter your inputs to the input list as an object array:\n      Inputs = [\n        {inputName: \"shape\", type: \"geometry\", defaultValue: null},\n        {inputName: \"dist\", type: \"number\", defaultValue: 5},\n        {inputName: \"height\", type: \"number\", defaultValue: 10}\n      ]\n      If your input is connected to another atom with a replicad geometry you can access its geometry by looking up its ID in your library. a.e library[Input1].geometry[0]\n      Use any replicad available methods to modify your geometry. Learn more about all of the available methods at\n      https://replicad.xyz/docs/introapp/UserGuide.html\n      Return a replicad object that includes geometry, color, tags and plane.\n\n      Example Code Atom:\n        Inputs = [\n          {inputName: \"shape\", type: \"geometry\", defaultValue: null},\n          {inputName: \"x\", type: \"number\", defaultValue: 5}\n        ]\n        let finalShape = library[shape].geometry[0].clone().translate([x,0,0])\n        return {geometry: finalShape, color: library[shape].color, plane: library[shape].plane, tags: library[shape].tags }\n      */\n      "
                 },
                 {
@@ -3755,7 +3770,7 @@
                       "ioValue": "__GEOMETRY_INPUT__"
                     }
                   ],
-                  "codeVersion": 1,
+                  "interpreterVersion": 0,
                   "code": "const Inputs = [\n  { inputName: \"shape\", type: \"geometry\", defaultValue: null },\n  { inputName: \"radius\", type: \"number\", defaultValue: 2 },\n  { inputName: \"region\", type: \"geometry\", defaultValue: null },\n];\n\nlet assembly = library[shape];\n\nlet edgeFilter = null;\nif (region !== null) {\n  let bounds = await GetBounds(region);\n  const tol = 1e-6;\n  edgeFilter = (e) => e.when(({ element }) => {\n    const bb = element.boundingBox.bounds;\n    return (\n      bb[0][0] >= bounds.min[0] - tol &&\n      bb[0][1] >= bounds.min[1] - tol &&\n      bb[0][2] >= bounds.min[2] - tol &&\n      bb[1][0] <= bounds.max[0] + tol &&\n      bb[1][1] <= bounds.max[1] + tol &&\n      bb[1][2] <= bounds.max[2] + tol\n    );\n  });\n}\n\nreturn await AssemblyMap(assembly, async (leaf) => {\n  let solid = leaf.geometry[0];\n  let filleted = edgeFilter ? solid.fillet(radius, edgeFilter) : solid.fillet(radius);\n  return { ...leaf, geometry: [filleted] };\n});"
                 },
                 {
@@ -4223,7 +4238,7 @@
                   "ioValue": "__GEOMETRY_INPUT__"
                 }
               ],
-              "codeVersion": 1,
+              "interpreterVersion": 0,
               "code": "const Inputs = [\n  { inputName: \"shape\", type: \"geometry\", defaultValue: null },\n];\n\nreturn await AssemblyMap(library[shape], async (leaf) => {\n  let solid = leaf.geometry[0];\n\n  let finder = new replicad.FaceFinder().inPlane(\"XY\", 0);\n  let faces = finder.applyFilter(solid);\n\n  if (faces.length === 0) {\n    let bounds = solid.boundingBox.bounds;\n    let margin = 1;\n    let w = bounds[1][0] - bounds[0][0] + 2 * margin;\n    let h = bounds[1][1] - bounds[0][1] + 2 * margin;\n    let cx = (bounds[0][0] + bounds[1][0]) / 2;\n    let cy = (bounds[0][1] + bounds[1][1]) / 2;\n    let maxZ = bounds[1][2] + margin;\n\n    let upperBox = replicad.drawRectangle(w, h)\n      .sketchOnPlane(\"XY\")\n      .extrude(maxZ)\n      .translate(cx, cy, 0);\n\n    let cut = solid.cut(upperBox);\n    faces = finder.applyFilter(cut);\n  }\n\n  if (faces.length === 0) {\n    throw new Error(\"Shape does not intersect the XY plane\");\n  }\n\n  let { uMin, uMax, vMin, vMax } = faces[0].UVBounds;\n\n  // pointOnSurface takes normalized [0,1] UV coords.\n  // (0,0) → actual (uMin, vMin), (1,0) → (uMax, vMin), (0,1) → (uMin, vMax)\n  let p00 = faces[0].pointOnSurface(0, 0);\n  let p10 = faces[0].pointOnSurface(1, 0);\n  let p01 = faces[0].pointOnSurface(0, 1);\n\n  let du = uMax - uMin;\n  let dv = vMax - vMin;\n\n  // Actual U and V axis unit vectors from the Geom_Plane parameterization\n  let uAxisX = (p10.x - p00.x) / du;\n  let uAxisY = (p10.y - p00.y) / du;\n  let vAxisX = (p01.x - p00.x) / dv;\n  let vAxisY = (p01.y - p00.y) / dv;\n\n  // Geom_Plane origin: world point at actual UV = (0, 0)\n  // p00 = O + uMin*U + vMin*V  =>  O = p00 - uMin*U - vMin*V\n  let planeOriginX = p00.x - uMin * uAxisX - vMin * vAxisX;\n  let planeOriginY = p00.y - uMin * uAxisY - vMin * vAxisY;\n\n  // Rotation angle of the U axis relative to world X\n  let angleDeg = Math.atan2(uAxisY, uAxisX) * 180 / Math.PI;\n\n  // 2D cross product tells us the handedness of the UV frame.\n  // Right-handed (cross > 0): V is 90° CCW from U → pure rotation suffices.\n  // Left-handed  (cross < 0): V is 90° CW  from U → mirror Y first, then rotate.\n  let cross = uAxisX * vAxisY - uAxisY * vAxisX;\n\n  // drawFaceOutline returns 2D curves in the face's UV parameter space.\n  // Transform to world XY: (mirror Y if left-handed) → rotate by U-axis angle → translate by plane origin.\n  let drawing = replicad.drawFaceOutline(faces[0]);\n  if (cross < 0) {\n    drawing = drawing.mirror([1, 0], [0, 0], \"plane\"); // flip V: (u,v) → (u,-v)\n  }\n  drawing = drawing.rotate(angleDeg).translate(planeOriginX, planeOriginY);\n\n  return {\n    ...leaf,\n    geometry: [drawing],\n    dimension: \"2D\",\n  };\n});\n"
             },
             {
@@ -4490,7 +4505,7 @@
                       "ioValue": {
                         "geometry": [
                           {
-                            "geometry": "5ea22352-4-60-{\"geometry\":\"move-circle-1.6-0-12.5-0\",\"dimension\":\"2D\",\"tags\":[],\"plane\":{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]},\"color\":\"#aad7f2\",\"bom\":[]}-8",
+                            "geometry": "5ea22352-{\"geometry\":\"move-circle-1.6-0-12.5-0\",\"dimension\":\"2D\",\"tags\":[],\"plane\":{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]},\"color\":\"#aad7f2\",\"bom\":[]}-4-60-8",
                             "dimension": "2D",
                             "tags": [],
                             "plane": {
@@ -4511,10 +4526,22 @@
                               ]
                             },
                             "color": "#aad7f2",
-                            "bom": []
+                            "bom": [],
+                            "boundingBox": {
+                              "min": [
+                                -1.6000010000000002,
+                                10.899999000000001,
+                                0
+                              ],
+                              "max": [
+                                1.6000010000000002,
+                                14.100000999999999,
+                                0
+                              ]
+                            }
                           },
                           {
-                            "geometry": "5ea22352-4-60-{\"geometry\":\"move-circle-1.6-0-12.5-0\",\"dimension\":\"2D\",\"tags\":[],\"plane\":{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]},\"color\":\"#aad7f2\",\"bom\":[]}-9",
+                            "geometry": "5ea22352-{\"geometry\":\"move-circle-1.6-0-12.5-0\",\"dimension\":\"2D\",\"tags\":[],\"plane\":{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]},\"color\":\"#aad7f2\",\"bom\":[]}-4-60-9",
                             "dimension": "2D",
                             "tags": [],
                             "plane": {
@@ -4535,10 +4562,22 @@
                               ]
                             },
                             "color": "#aad7f2",
-                            "bom": []
+                            "bom": [],
+                            "boundingBox": {
+                              "min": [
+                                -12.425318547305482,
+                                4.649999000000001,
+                                0
+                              ],
+                              "max": [
+                                -9.225316547305484,
+                                7.8500010000000024,
+                                0
+                              ]
+                            }
                           },
                           {
-                            "geometry": "5ea22352-4-60-{\"geometry\":\"move-circle-1.6-0-12.5-0\",\"dimension\":\"2D\",\"tags\":[],\"plane\":{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]},\"color\":\"#aad7f2\",\"bom\":[]}-10",
+                            "geometry": "5ea22352-{\"geometry\":\"move-circle-1.6-0-12.5-0\",\"dimension\":\"2D\",\"tags\":[],\"plane\":{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]},\"color\":\"#aad7f2\",\"bom\":[]}-4-60-10",
                             "dimension": "2D",
                             "tags": [],
                             "plane": {
@@ -4559,10 +4598,22 @@
                               ]
                             },
                             "color": "#aad7f2",
-                            "bom": []
+                            "bom": [],
+                            "boundingBox": {
+                              "min": [
+                                -12.425318547305485,
+                                -7.850000999999998,
+                                0
+                              ],
+                              "max": [
+                                -9.225316547305484,
+                                -4.649998999999997,
+                                0
+                              ]
+                            }
                           },
                           {
-                            "geometry": "5ea22352-4-60-{\"geometry\":\"move-circle-1.6-0-12.5-0\",\"dimension\":\"2D\",\"tags\":[],\"plane\":{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]},\"color\":\"#aad7f2\",\"bom\":[]}-11",
+                            "geometry": "5ea22352-{\"geometry\":\"move-circle-1.6-0-12.5-0\",\"dimension\":\"2D\",\"tags\":[],\"plane\":{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]},\"color\":\"#aad7f2\",\"bom\":[]}-4-60-11",
                             "dimension": "2D",
                             "tags": [],
                             "plane": {
@@ -4583,7 +4634,19 @@
                               ]
                             },
                             "color": "#aad7f2",
-                            "bom": []
+                            "bom": [],
+                            "boundingBox": {
+                              "min": [
+                                -1.6000010000000018,
+                                -14.100000999999999,
+                                0
+                              ],
+                              "max": [
+                                1.6000009999999987,
+                                -10.899999000000001,
+                                0
+                              ]
+                            }
                           }
                         ],
                         "plane": {
@@ -4607,7 +4670,19 @@
                         "color": "#aad7f2",
                         "bom": [],
                         "dimension": "2D",
-                        "nonReplicadSerialized": []
+                        "nonReplicadSerialized": [],
+                        "boundingBox": {
+                          "min": [
+                            -12.425318547305485,
+                            -14.100000999999999,
+                            0
+                          ],
+                          "max": [
+                            1.6000010000000002,
+                            14.100000999999999,
+                            0
+                          ]
+                        }
                       }
                     }
                   ],
@@ -4838,19 +4913,19 @@
                       "uniqueID": "id-168474",
                       "ioValues": [
                         {
+                          "name": "Shape",
+                          "ioValue": "__GEOMETRY_INPUT__"
+                        },
+                        {
                           "name": "Number",
-                          "ioValue": 4
+                          "ioValue": "__GEOMETRY_INPUT__"
                         },
                         {
                           "name": "Angle",
-                          "ioValue": 60
-                        },
-                        {
-                          "name": "Shape",
                           "ioValue": "__GEOMETRY_INPUT__"
                         }
                       ],
-                      "codeVersion": 1,
+                      "interpreterVersion": 0,
                       "code": "//Inputs:[Shape, Number, Angle];\n\n\nlet shapesArray = [];\nfor (let i = 0; i < Number; i++) {\n    let rotatedShape = await Rotate(Shape, 0, 0, Angle * i);\n    shapesArray.push(rotatedShape);\n}\n\nlet assembledShape = await Assembly(shapesArray)\n\nreturn assembledShape;\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    /**\n    To Use the Code Atom, enter your inputs to the input list a.e Inputs:[shape, height]\n    If your input is connected to another atom with a replicad geometry you can access its geometry by looking up its ID in your library. a.e library[Input1].geometry[0] \n    Use any replicad available methods to modify your geometry. Learn more about all of the available methods at \n    https://replicad.xyz/docs/introapp/UserGuide.html \n    Return a replicad object that includes geometry, color, tags and plane. \n\n\n    Example Code Atom:\n\n      Inputs:[shape, x];\n\n      let finalShape = library[shape].geometry[0].clone.translate[x,0,0]\n\n      return {geometry: finalShape, color: library[shape].color, plane: library[shape].plane, tags: library[shape].tags }\n\n      - See more examples at _______ \n\n\n    */\n"
                     },
                     {
@@ -5436,7 +5511,7 @@
                               "ioValue": 2
                             }
                           ],
-                          "codeVersion": 1,
+                          "interpreterVersion": 0,
                           "code": "const Inputs = [\n  { inputName: \"shape\", type: \"geometry\", defaultValue: null },\n  { inputName: \"radius\", type: \"number\", defaultValue: 2 },\n];\n\nlet assembly = library[shape];\n\nreturn await AssemblyMap(assembly, async (leaf) => {\n  let solid = leaf.geometry[0];\n  let filleted = solid.fillet(radius, (e) => e.inDirection(\"Z\"));\n  return { ...leaf, geometry: [filleted] };\n});\n"
                         },
                         {
@@ -5505,7 +5580,7 @@
                               "ioValue": "__GEOMETRY_INPUT__"
                             }
                           ],
-                          "codeVersion": 1,
+                          "interpreterVersion": 0,
                           "code": "const Inputs = [\n  { inputName: \"shape\", type: \"geometry\", defaultValue: null },\n  { inputName: \"radius\", type: \"number\", defaultValue: 2 },\n  { inputName: \"region\", type: \"geometry\", defaultValue: null },\n];\n\nlet assembly = library[shape];\n\nlet edgeFilter;\nif (region !== null) {\n  let bounds = await GetBounds(region);\n  edgeFilter = (e) => e.inDirection(\"Z\").inBox(bounds.min, bounds.max);\n} else {\n  edgeFilter = (e) => e.inDirection(\"Z\");\n}\n\nreturn await AssemblyMap(assembly, async (leaf) => {\n  let solid = leaf.geometry[0];\n  let filleted = solid.fillet(radius, edgeFilter);\n  return { ...leaf, geometry: [filleted] };\n});\n"
                         },
                         {
@@ -5864,6 +5939,11 @@
           "ap2ID": "id-168719"
         },
         {
+          "ap2Name": "number or geometry",
+          "ap1ID": "id-165733",
+          "ap2ID": "id-165442"
+        },
+        {
           "ap2Name": "geometry",
           "ap1ID": "id-168706",
           "ap2ID": "id-168716"
@@ -5872,11 +5952,6 @@
           "ap2Name": "Shape 1",
           "ap1ID": "id-168716",
           "ap2ID": "id-168719"
-        },
-        {
-          "ap2Name": "number or geometry",
-          "ap1ID": "id-168719",
-          "ap2ID": "id-165442"
         },
         {
           "ap2Name": "Shape 1",
@@ -7112,11 +7187,15 @@
                       "uniqueID": "id-166088",
                       "ioValues": [
                         {
+                          "name": "inputShape",
+                          "ioValue": "__GEOMETRY_INPUT__"
+                        },
+                        {
                           "name": "radius",
-                          "ioValue": 2
+                          "ioValue": "__GEOMETRY_INPUT__"
                         }
                       ],
-                      "codeVersion": 1,
+                      "interpreterVersion": 0,
                       "code": "      //Inputs:[inputShape, radius]\n      //This defines the molecules inputs and creates variables with the same names which can be referenced in the code\n      \n      //Takes the address and gets the shape from the library\n      let importedShape = library[inputShape]\n      \n      //This makes a new copy of of the shape (to prevent garbage collection issues),\n      //and moves it in the X direction. Note that this will not work if the input is an assembly\n      let chamferedShape = await Fillet(inputShape, radius);\n      \n      \n      //Shapes stored in the library have tags, a color, a plane, and a bill of materials like this. We don't modify them here\n      let shape1 = {\n        geometry: [chamferedShape],\n        tags: importedShape.tags,\n        color: importedShape.color,\n        plane: importedShape.plane,\n        bom: importedShape.bom\n      }\n      \n      //We could at this point return shape1 as a complete shape and it will be automatically written to the library for us\n      return shape1"
                     }
                   ],
@@ -8343,18 +8422,18 @@
                           "ioValues": [
                             {
                               "name": "angle",
-                              "ioValue": 75
+                              "ioValue": "__GEOMETRY_INPUT__"
                             },
                             {
                               "name": "height",
-                              "ioValue": 100
+                              "ioValue": "__GEOMETRY_INPUT__"
                             },
                             {
                               "name": "thickness",
-                              "ioValue": 10
+                              "ioValue": "__GEOMETRY_INPUT__"
                             }
                           ],
-                          "codeVersion": 1,
+                          "interpreterVersion": 0,
                           "code": " \n      //Inputs:[angle, height, thickness]\n      //This defines the molecules inputs and creates variables with the same names which can be referenced in the code\n    \n      \n      //We can also create a new shape from scratch\n      let createdRectangle = replicad.drawRectangle(5,7)\n      //This is the plane we are going to put our new shape on\n      const newPlane = new replicad.Plane().pivot(0, 'Y');\n      //And we extrude the shape to make it 3D\n      let createdShape = createdRectangle.sketchOnPlane(newPlane).extrude(height)\n\n      let angleRad = angle * Math.PI / 180;\n      let base = 2 * height * Math.tan(angleRad / 2);\n\n      const triangle = replicad.draw([-base/2, 0])\n              .lineTo([base/2, 0])\n              .lineTo([0, height])\n              .close()\n              .sketchOnPlane()\n              .extrude(thickness)\n      \n      //For our new geometry we need to define the tags, color, plane, etc\n      let shape2 = {\n          geometry: [triangle], \n          tags: [\"aTag\"],\n          color: '#A3CE5B',\n          plane: newPlane,\n          bom: []\n      }\n      \n      //Then we can return our created shape in just the same way\n      return shape2\n \n      \n      \n          /**\n          To Use the Code Atom, enter your inputs to the input list a.e Inputs:[shape, height]\n          If your input is connected to another atom with a replicad geometry you can access its geometry by looking up its ID in your library. a.e library[Input1].geometry[0] \n          Use any replicad available methods to modify your geometry. Learn more about all of the available methods at \n          https://replicad.xyz/docs/introapp/UserGuide.html \n          Return a replicad object that includes geometry, color, tags and plane. \n      \n      \n          Example Code Atom:\n      \n            Inputs:[shape, x];\n      \n            let finalShape = library[shape].geometry[0].clone.translate[x,0,0]\n      \n            return {geometry: finalShape, color: library[shape].color, plane: library[shape].plane, tags: library[shape].tags }\n      \n            - See more examples at _______ \n      \n      \n          */\n      "
                         },
                         {
