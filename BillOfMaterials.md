@@ -5,6 +5,5 @@
 |Battery|1|$0.00||
 |17mm M3 Bolt|4|$0.00||
 |New Item|4|$0.00||
-|SSD1306 Screen|1|$6.50|https://amzn.to/41Y3WH4|
 |Arduino Joystick|1|$3.50|https://amzn.to/421Nm9e|
-|Total: |11|$10.00| |
+|Total: |10|$3.50| |
