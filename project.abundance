@@ -787,7 +787,7 @@
     {
       "atomType": "Molecule",
       "x": 0.2,
-      "y": 0.5,
+      "y": 0.4,
       "uniqueID": "id-165440",
       "name": "Joystick",
       "topLevel": false,
@@ -1314,7 +1314,7 @@
         {
           "atomType": "Molecule",
           "x": 0.1,
-          "y": 0.6,
+          "y": 0.7,
           "uniqueID": "id-165530",
           "name": "Joystick",
           "topLevel": false,
@@ -1355,7 +1355,7 @@
                 },
                 {
                   "name": "height",
-                  "ioValue": 25
+                  "ioValue": 29
                 }
               ]
             },
@@ -1598,7 +1598,7 @@
             {
               "atomType": "GitHubMolecule",
               "x": 0.5,
-              "y": 0.4,
+              "y": 0.5,
               "uniqueID": "id-165600",
               "name": "Above",
               "ioValues": [
@@ -1788,7 +1788,7 @@
                 },
                 {
                   "name": "height",
-                  "ioValue": 20
+                  "ioValue": 24
                 }
               ]
             },
@@ -4035,7 +4035,7 @@
         },
         {
           "name": "zDist",
-          "ioValue": -12
+          "ioValue": -16
         }
       ]
     },
@@ -16061,11 +16061,13 @@
       "ioValues": [
         {
           "name": "Offset",
-          "ioValue": -10
+          "ioValue": 0,
+          "currentEquation": "0"
         },
         {
           "name": "Angle X",
-          "ioValue": 0
+          "ioValue": 0,
+          "currentEquation": "0"
         },
         {
           "name": "Angle Z",
@@ -16073,7 +16075,8 @@
         },
         {
           "name": "Angle Y",
-          "ioValue": 0
+          "ioValue": 90,
+          "currentEquation": "90"
         }
       ],
       "topLevel": false,
@@ -16187,7 +16190,7 @@
             },
             {
               "name": "zDist",
-              "ioValue": -10
+              "ioValue": 0
             }
           ]
         },
@@ -16207,7 +16210,7 @@
             },
             {
               "name": "y-axis degrees",
-              "ioValue": 0
+              "ioValue": 90
             },
             {
               "name": "z-axis degrees",
