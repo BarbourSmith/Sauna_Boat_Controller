@@ -1345,8 +1345,8 @@
             },
             {
               "atomType": "Extrude",
-              "x": 0.3,
-              "y": 0.3,
+              "x": 0.4,
+              "y": 0.2,
               "uniqueID": "id-165537",
               "ioValues": [
                 {
@@ -1772,7 +1772,7 @@
               "ioValues": [
                 {
                   "name": "diameter",
-                  "ioValue": 26
+                  "ioValue": 27
                 }
               ]
             },
