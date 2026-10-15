@@ -2258,7 +2258,7 @@
                 },
                 {
                   "name": "zDist",
-                  "ioValue": 13
+                  "ioValue": 16
                 }
               ]
             }
@@ -16061,13 +16061,11 @@
       "ioValues": [
         {
           "name": "Offset",
-          "ioValue": 0,
-          "currentEquation": "0"
+          "ioValue": 0
         },
         {
           "name": "Angle X",
-          "ioValue": 0,
-          "currentEquation": "0"
+          "ioValue": 0
         },
         {
           "name": "Angle Z",
@@ -16075,8 +16073,7 @@
         },
         {
           "name": "Angle Y",
-          "ioValue": 90,
-          "currentEquation": "90"
+          "ioValue": 90
         }
       ],
       "topLevel": false,
