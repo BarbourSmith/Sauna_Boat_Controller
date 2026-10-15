@@ -2,7 +2,7 @@
 
 # Sauna_Boat_Controller
 
-![](/project.svg)
+![](/project.png)
 
 
 
